@@ -1,0 +1,1302 @@
+/* :root represents the highest-level html element.
+   It stores reusable CSS variables for the whole Services page.
+   Students must replace these example colours with their actual colours. */
+:root {
+    --primary: #ffbc05; /* Store the website's main colour. */
+    --primary-dark: #ffbc05; /* Store a darker version for strong backgrounds. */
+    --accent: #8400ff; /* Store the highlight and hover colour. */
+    --background: #f4f7fa; /* Store the page background colour. */
+    --surface: #ffffff; /* Store the card background colour. */
+    --text: #7507f3; /* Store the normal text colour. */
+    --border: #7507f3; /* Store the card border colour. */
+}
+
+/* Select every HTML element. */
+* {
+    box-sizing:border-box; /* Include padding and borders inside element widths. */
+}
+
+/* Style the complete visible webpage. */
+body {
+    margin: 0; /* Remove the browser's default outside spacing. */
+    background-color: var(--background); /* Use the stored background colour. */
+    color: var(--text); /* Use the stored normal text colour. */
+    font-family: Arial, Helvetica, sans-serif; /* Set readable fallback fonts. */
+    font-size: 16px; /* Set the default text size. */
+    line-height: 1.6; /* Add readable space between lines. */
+}
+
+/* Create a reusable centred content area. */
+.container {
+    width: min(90%, 1200px); /* Use 90% width but never exceed 1200px. */
+    margin-inline: auto; /* Centre the container horizontally. */
+}
+
+/* Remove normal underlines and animate link colour changes. */
+a {
+    text-decoration: none; /* Remove the browser's default underline. */
+    transition: 0.25s ease; /* Smoothly animate interaction changes. */
+}
+
+/* Style the header across the top of the Services page. */
+.site-header {
+    background-color: var(--primary); /* Use the main website colour. */
+    border-bottom: 4px solid var(--accent); /* Add an accent line. */
+}
+
+/* Arrange the brand and navigation in one row. */
+.header-inner {
+    display: flex; /* Place children next to each other. */
+    align-items: center; /* Align children vertically. */
+    justify-content: space-between; /* Push them to opposite sides. */
+    min-height: 80px; /* Give the header a useful minimum height. */
+    gap: 2rem; /* Add space between the brand and navigation. */
+}
+
+/* Style the clickable organisation name. */
+.brand {
+    color: #7200f5; /* Display the brand in white. */
+    font-size: 1.25rem; /* Make it larger than normal text. */
+    font-weight: bold; /* Emphasise the organisation name. */
+}
+
+/* Arrange the main navigation links. */
+.site-nav {
+    display: flex; /* Place links in one row. */
+    gap: 0.35rem; /* Add a small gap between links. */
+}
+
+/* Style each link inside the main navigation. */
+.site-nav a {
+    padding: 0.7rem 0.9rem; /* Add clickable space inside each link. */
+    border-radius: 6px; /* Round the link corners. */
+    color: #ffffff; /* Display normal navigation text in white. */
+    font-weight: bold; /* Make navigation labels easy to identify. */
+}
+
+/* Apply when a mouse pointer is over a navigation link. */
+.site-nav a:hover {
+    background-color: var(--accent); /* Change to the accent background. */
+    color: var(--primary-dark); /* Use dark text for contrast. */
+    transform: translateY(-2px); /* Move the link slightly upward. */
+}
+
+/* Apply when a keyboard user selects a navigation link. */
+.site-nav a:focus-visible {
+    outline: 3px solid #ffffff; /* Draw a visible keyboard focus outline. */
+    outline-offset: 2px; /* Add space around the outline. */
+}
+
+/* Highlight the link for the page currently open. */
+.site-nav a[aria-current="page"] {
+    background-color: #ffffff; /* Use a white active-link background. */
+    color: var(--primary); /* Use the main colour for active-link text. */
+}
+
+/* Style the short introduction at the top of the page. */
+.page-header {
+    padding: 4rem 0; /* Add vertical space inside the section. */
+    background-color: var(--primary-dark); /* Use the dark website colour. */
+    color: #7200f5; /* Make inherited text white. */
+    text-align: center; /* Centre the introduction. */
+}
+
+/* Style the small line above the main heading. */
+.eyebrow {
+    margin-bottom: 0.5rem; /* Add space below the line. */
+    color: var(--accent); /* Use the accent colour. */
+    font-weight: bold; /* Emphasise the text. */
+    text-transform: uppercase; /* Display the text in capital letters. */
+}
+
+/* Style the main Services heading. */
+.page-header h1 {
+    margin: 0 0 1rem; /* Remove top space and add bottom space. */
+    font-size: clamp(2rem, 5vw, 3.25rem); /* Make the size responsive. */
+}
+
+/* Keep the introductory paragraph readable and centred. */
+.page-introduction {
+    max-width: 700px; /* Stop the paragraph from becoming too wide. */
+    margin: 0 auto; /* Centre the paragraph. */
+}
+
+/* Add space around the main Services content. */
+.services-section {
+    padding: 4rem 0; /* Add vertical section spacing. */
+}
+
+/* Style the heading above the cards. */
+.section-heading {
+    margin: 0 0 2rem; /* Add space below the heading. */
+    color: var(--primary); /* Use the main website colour. */
+    text-align: center; /* Centre the heading. */
+}
+
+/* Arrange four cards in a responsive grid. */
+.services-grid {
+    display: grid; /* Turn this container into CSS Grid. */
+    grid-template-columns: repeat(4, 1fr); /* Create four equal columns. */
+    gap: 1.5rem; /* Add space between cards. */
+}
+
+/* Style every repeated service card. */
+.service-card {
+    overflow: hidden; /* Keep the image inside the rounded corners. */
+    background-color: var(--surface); /* Use the stored card colour. */
+    border: 1px solid var(--border); /* Add a light card border. */
+    border-radius: 10px; /* Round the card corners. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Add depth. */
+    transition: transform 0.25s ease; /* Animate the card hover movement. */
+}
+
+/* Apply while the mouse is over a service card. */
+.service-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly upward. */
+}
+
+/* Give every service image the same size. */
+.service-image {
+    display: block; /* Remove the inline gap below an image. */
+    width: 100%; /* Fill the complete card width. */
+    height: 180px; /* Give all four images equal height. */
+    object-fit: cover; /* Crop images without stretching them. */
+}
+
+/* Add internal spacing around each card's text. */
+.service-content {
+    padding: 1.25rem; /* Add space between text and card edges. */
+}
+
+/* Style each service name. */
+.service-content h3 {
+    margin: 0 0 0.5rem; /* Remove top space and add bottom space. */
+    color: var(--primary); /* Use the main website colour. */
+}
+
+/* Remove unnecessary space below each service description. */
+.service-content p {
+    margin-bottom: 0; /* Remove the final paragraph's bottom margin. */
+}
+
+/* Style the footer at the bottom of the Services page. */
+.site-footer {
+    padding: 2rem 0; /* Add internal footer spacing. */
+    background-color: var(--primary-dark); /* Use the dark website colour. */
+    color: #ffffff; /* Display footer text in white. */
+    text-align: center; /* Centre the footer text. */
+}
+
+/* Remove the paragraph's default footer margin. */
+.site-footer p {
+    margin: 0; /* Remove unwanted space around the copyright. */
+}
+
+/* Tablet rules apply when the screen is 900px or narrower. */
+@media (max-width: 900px) {
+    /* Stack the brand above the navigation on tablets. */
+    .header-inner {
+        flex-direction: column; /* Change the header from a row to a column. */
+        padding: 1rem 0; /* Add space inside the stacked header. */
+    }
+
+    /* Allow tablet navigation links to move onto another line. */
+    .site-nav {
+        justify-content: center; /* Centre the links. */
+        flex-wrap: wrap; /* Wrap links when space is limited. */
+    }
+
+    /* Change the four service cards into two columns. */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* Display two equal columns. */
+    }
+}
+
+/* Phone rules apply when the screen is 600px or narrower. */
+@media (max-width: 600px) {
+    /* Stack the navigation links vertically. */
+    .site-nav {
+        width: 100%; /* Fill the available phone width. */
+        flex-direction: column; /* Place links below one another. */
+    }
+
+    /* Make every phone navigation link easy to tap. */
+    .site-nav a {
+        width: 100%; /* Make each link fill the navigation width. */
+        text-align: center; /* Centre each link label. */
+    }
+
+    /* Display one service card per row on phones. */
+    .services-grid {
+        grid-template-columns: 1fr; /* Change the grid to one column. */
+    }
+}
+
+
+
+
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 24px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #555;
+}
+
+.contact-form input {
+    height: 40px;
+}
+
+.contact-form select {
+    height: 40px;
+    cursor: pointer;
+}
+
+.contact-form textarea {
+    height: 70px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #c9a646;
+}
+
+.contact-form button {
+    background-color: #c5a24a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #a98935;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-details iframe {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* 4-Coumn Footer Layout */
+.site-footer{
+    background-color:var(--primary);
+    padding: 3rem 0;
+    color: var(--text);
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: start;
+    text-align: left;
+}
+
+.footer-logo{
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-grid h3{
+    margin:0.0.1rem 0;
+    font-size: 1.1rem;
+}
+
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-grid ul li{
+    margin-bottom: 0.5rem;
+}
+
+.footer-grid a{
+    color: var(--text);
+}
+
+.footer-grid a:hover{
+    color: var(--background);
+}
+
+/*Social Media Button Links*/
+.social-links{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a{
+    background-color: var(--accent);
+    color: #ffffff;
+    padding:  0.5rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover{
+    background-color: var(--background);
+    color: var(--accent);
+}
+
+/*Responsive Rules for Contact and Footer grid */
+@media (max-width:900px){
+    .contact-grid{
+        grid-template-columns: 1fr;
+    }
+    .footer-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (media-width:600px){
+    .footer-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Alighns the logo and the h1 side-by-side */
+.heading-with-logo{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+/*Control the logo size so it doesnt break the banner*/
+.banner-logo{
+    height: 50px;
+    width: auto;
+}
+
+/*Controls the size of the logo in the orange banner*/
+.banner-logo{
+    max-width: 350px;
+    height: auto;
+    margin: 20px;
+}
+
+
+/* Container for the side-by-side cards */
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+/* Card base styling */
+.contact-box {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card titles */
+.contact-box h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: Arial, sans-serif;
+}
+
+.contact-box h3:not(:first-child) {
+  margin-top: 24px;
+}
+
+/* Address styling */
+.address-text {
+  margin: 0;
+  color: #444444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Phone & Icon styling */
+.phone-link {
+  margin: 0;
+}
+
+.phone-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #8c733e; /* Muted gold matching the reference icon */
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phone-link a:hover {
+  text-decoration: underline;
+}
+
+.phone-icon {
+  fill: #8c733e;
+}
+
+/* Opening hours rows */
+.hours-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hours-row .day {
+  font-weight: 700;
+  color: #111111;
+}
+
+.hours-row .time {
+  color: #111111;
+  font-weight: 500;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --- ENQUIRY PAGE STYLING --- */
+
+/* Page Background & Text Color */
+.enquiry-page {
+    background-color: #ffffff; /* Lavender background */
+    color: #5900ff; /* Dark Navy text */
+    padding: 5rem 0;
+}
+
+.enquiry-page h2 {
+    color: #1a1b41;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* 2-Column Layout Grid */
+.enquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+/* Left Column Styling */
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-list li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.faq-list strong {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* Right Column Form Styling */
+.minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* Puts Name and Email side-by-side */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* The "Line Only" Input Style */
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #1a1b41;
+    color: #1a1b41;
+    padding: 0.5rem 0;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+/* Remove border-bottom highlight on click */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-bottom: 2px solid #5d678a; 
+}
+
+/* Radio Button Styling */
+.minimal-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.minimal-fieldset legend {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.radio-group {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Pill-shaped Submit Button */
+.pill-button {
+    background-color: #5d678a; /* Slate Blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px; /* Creates the pill shape */
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start; /* Stops the button from stretching across the screen */
+    transition: background-color 0.3s ease;
+}
+
+.pill-button:hover {
+    background-color: #1a1b41; /* Dark Navy on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .enquiry-grid {
+        grid-template-columns: 1fr; /* Stacks the columns on small screens */
+        gap: 3rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr; /* Stacks the name and email on phones */
+    }
+}
+
+/* --- ENQUIRY HERO BANNER --- */
+.enquiry-hero {
+    /* Change 'your-image-name.jpg' to your actual file name! */
+    background-image: url('../Images/WhatsApp\ Image\ 2026-09-07\ at\ 5.26.24\ PM\ \(1\).jpeg');
+    background-size: cover; /* Stretches the image to fill the box without distorting it */
+    background-position: center; /* Keeps the most important part of the image in the middle */
+    background-repeat: no-repeat;
+    
+    /* Controls how tall the picture is */
+    height: 50vh; /* Takes up 50% of the screen height */
+    min-height: 400px; 
+    
+    /* Centers the text perfectly inside the banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* This adds a slight dark tint to the picture so the white text is easy to read */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+    
+    margin-bottom: 4rem; /* Adds space between the picture and your form below it */
+}
+
+/* Styles the floating text */
+.hero-content h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Shrinks nicely on cellphones */
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Adds a drop shadow to the letters */
+}
+
+/* --- ABOUT PAGE SPLIT LAYOUT --- */
+
+/* Removes default margins from the main tag so the colors touch the edges */
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* TOP SECTION (2 Columns) */
+.about-split-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+}
+
+.about-welcome-box {
+    background-color: var(--accent); /* Light Orange */
+    color: var(--primary); /* Deep Purple text */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-welcome-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.about-welcome-box p {
+    font-size: 1.2rem;
+}
+
+.about-image-box {
+    height: 100%;
+}
+
+.about-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents the image from squishing */
+    display: block;
+}
+
+/* BOTTOM SECTION (3 Columns) */
+.about-split-bottom {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* Specific widths to match the picture */
+}
+
+/* The Sideways Text Box */
+.vertical-title-box {
+    background-color: #ffbc05; /* A very light pink/purple for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.vertical-title-box h2 {
+    color: var(--text);
+    font-size: 4rem;
+    margin: 0;
+    /* The CSS to turn the text completely sideways */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+}
+
+/* The Main Text Area */
+.about-content-box {
+    background-color: #ffffff;
+    padding: 4rem 3rem;
+}
+
+.about-content-box h3 {
+    color: var(--primary-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-content-box ul {
+    line-height: 1.8;
+}
+
+/* The Blank Color Block on the Right */
+.about-accent-box {
+    background-color: var(--primary-dark); /* Darker Orange */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    /* Stacks everything in a single column on phones/tablets */
+    .about-split-top,
+    .about-split-bottom {
+        grid-template-columns: 1fr; 
+    }
+    
+    .vertical-title-box h2 {
+        /* Turns the text right-side up for mobile screens */
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 2.5rem;
+    }
+    
+    .about-accent-box {
+        display: none; /* Hides the blank accent box on small screens */
+    }
+}
+
+/* --- MODERN HOME PAGE STYLING (Uber-Style) --- */
+
+.modern-home {
+    background-color: #ffffff; /* Clean white background */
+    color: #000000;
+    padding-bottom: 5rem;
+}
+
+/* 1. TOP SPLIT SECTION */
+.home-hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center; /* Centers content vertically */
+    gap: 4rem;
+    padding: 5rem 0;
+}
+
+.hero-text-content h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem); /* Massive, bold heading */
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #333333;
+}
+
+/* Action Buttons */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.primary-btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.secondary-btn {
+    background-color: #eeeeee;
+    color: #000000;
+}
+
+.secondary-btn:hover {
+    background-color: #dddddd;
+}
+
+/* Large Rounded Image */
+.hero-image-container img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px; /* Gives it the soft, rounded edges from the picture */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 2. BOTTOM SUGGESTIONS GRID */
+.focus-suggestions {
+    margin-top: 2rem;
+}
+
+.focus-suggestions h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1.5rem;
+}
+
+* The Updated Grey Cards */
+.suggestion-card {
+    background-color: #f6f6f6; 
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+    
+    /* THESE 3 LINES PUT THE TEXT ON THE LEFT AND IMAGE ON THE RIGHT */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Pushes the image to the bottom corner */
+    gap: 1rem;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px); 
+}
+
+/* This controls how big the small images are */
+.card-icon {
+    width: 80px; /* Change this number to make the images bigger or smaller */
+    height: auto;
+    object-fit: contain; /* Stops the image from looking squished */
+    border-radius: 8px; /* Optional: rounds the corners of your little images */
+}
+/* --- FOOTER ALIGNMENT FIX --- */
+
+.site-footer {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 4rem 0 2rem;
+  width: 100%;
+}
+
+/* Constrains width and centers the entire grid */
+.footer-grid {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  text-align: left;
+}
+
+/* Column 1: Brand & Logo */
+.footer-col:first-child,
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Headings */
+.footer-grid h3 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+/* Lists & Links */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-grid ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-grid a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Social links container */
+.footer-grid .social-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive collapse for tablets and mobile */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo,
+  .footer-col:first-child,
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-grid .social-links {
+    justify-content: center;
+  }
+}
+
+
+
+/* Section Container */
+.contact-section {
+  padding: 60px 0;
+  background-color: #fafbfc;
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Left Column Styling */
+.main-tel {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 25px 0;
+}
+
+.main-tel span {
+  color: #bfa15f; /* Gold accent */
+}
+
+.contact-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+.contact-box {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  padding: 20px 22px;
+}
+
+.contact-box h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.contact-box h4:not(:first-child) {
+  margin-top: 18px;
+}
+
+.address-text {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.phone-link {
+  margin: 0;
+}
+
+.phone-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #bfa15f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phone-icon {
+  fill: #bfa15f;
+}
+
+/* Opening Hours Inside Box */
+.hours-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 0.82rem;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hours-row .day {
+  font-weight: 700;
+  color: #111;
+}
+
+.hours-row .time {
+  color: #222;
+}
+
+/* Physical Address & Map */
+.physical-address-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #111;
+}
+
+.physical-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 20px 0;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 250px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e1e4e8;
+  margin-bottom: 20px;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.directions-btn {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1.5px solid #bfa15f;
+  border-radius: 20px;
+  color: #bfa15f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.directions-btn:hover {
+  background-color: #bfa15f;
+  color: #ffffff;
+}
+
+/* Right Column (Card Form) */
+.contact-form-card {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact-form-card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  color: #111;
+}
+
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+  width: 100%;
+  border: 1px solid #e2e5e9;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus {
+  border-color: #bfa15f;
+}
+
+.contact-form-card select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.contact-form-card textarea {
+  resize: vertical;
+}
+
+.submit-pill-btn {
+  background-color: #bfa15f;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 11px 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.submit-pill-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide error text by default; show when the JS adds .visible */
+.error-message {
+  display: none;
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-align: left;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+/* Outline input fields in red when validation fails */
+input.error,
+select.error,
+textarea.error {
+  border-color: #e53e3e !important;
+}
+
+/* Hide success box by default; show when .success is toggled */
+.form-status {
+  display: none;
+  background-color: #def7ec;
+  color: #03543f;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.form-status.success {
+  display: block;
+}

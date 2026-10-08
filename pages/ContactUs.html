@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Style.Css">
+    <title>Contact Us | Mangaung Digital Art Print</title>
+</head>
+<body>
+  <script src="../JS(JAVA SCRIPT)/main.js" defer></script>
+  <script src="../JS(JAVA SCRIPT)/validation.js" defer></script>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Mangaung Digital Art Print</a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="AboutUs.html">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Enquiry.html">Enquiry</a>
+        <a href="ContactUs.html" aria-label="page">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Reach Out</p>
+        <h1>Mangaung Digital Art Print</h1>
+        <p class="page-introduction">Current students and partners can easily get in touch with our Botshabelo branch by completing the form below.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-main-grid">
+
+        <!-- LEFT COLUMN: Contact Details & Map -->
+        <div class="contact-details-col">
+          <h2 class="main-tel">Tel: <span>08263 6371</span></h2>
+
+          <!-- Two Side-by-Side Cards -->
+          <div class="contact-cards-row">
+            <div class="contact-box">
+              <h4>Postal Address</h4>
+              <p class="address-text">2044 Section A, Botshabelo, 9781, Mangaung</p>
+              <h4>Accounts</h4>
+              <p class="phone-link">
+                <a href="tel:0871091828">
+                  <svg class="phone-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  087 109 1828
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-box">
+              <h4>Opening Hours</h4>
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span class="day">Weekdays:</span>
+                  <span class="time">8am to 5pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Saturday:</span>
+                  <span class="time">8am to 1pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Sunday:</span>
+                  <span class="time">Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Address & Map -->
+          <div class="physical-address-section">
+            <h3>Physical Address</h3>
+            <p class="physical-text">2044 Section A, Botshabelo, 9781, Mangaung</p>
+            <div class="map-wrapper">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.5565360849646!2d26.732426999999994!3d-29.265984600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8e43137dcf4c51%3A0xedc7ae61c84878f7!2sMangaung%20Digital%20Art%20Print!5e0!3m2!1sen!2sza!4v1786109290839!5m2!1sen!2sza" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin">
+              </iframe>
+            </div>
+            <a href="#" class="directions-btn">Download Directions</a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Form Card -->
+        <div class="contact-form-col">
+          <div class="contact-form-card">
+            <h2>Get In Touch</h2>
+
+            <!-- Form Status / Success Container -->
+            <div id="formStatus" class="form-status">
+              Thank you! Your message has been sent successfully.
+            </div>
+
+            <!-- Main Interactive Form -->
+            <form id="contactForm" class="contact-form" novalidate>
+              <div>
+                <input type="text" id="fullName" name="fullName" placeholder="Full name">
+                <span id="nameError" class="error-message">Please enter a name with at least 3 characters.</span>
+              </div>
+
+              <div>
+                <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number">
+              </div>
+
+              <div>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <span id="emailError" class="error-message">Please enter a valid email address.</span>
+              </div>
+
+              <div>
+                <input type="text" id="studyInterest" name="studyInterest" placeholder="I am looking to study">
+              </div>
+
+              <div>
+                <select id="location" name="location">
+                  <option value="" disabled selected>Location</option>
+                  <option value="botshabelo">Botshabelo</option>
+                  <option value="mangaung">Mangaung (Other)</option> 
+                </select>
+              </div>
+
+              <div>
+                <!-- ID changed to serviceSelect to match validation.js -->
+                <select id="serviceSelect" name="enquiryType">
+                  <option value="" disabled selected>Please select type of enquiry</option>
+                  <option value="enrollment">Program Enrollment</option>
+                  <option value="general">General Question</option>
+                </select>
+                <span id="serviceError" class="error-message">Please choose an option.</span>
+              </div>
+
+              <div>
+                <!-- ID changed to message to match validation.js -->
+                <textarea id="message" name="comments" rows="3" placeholder="Comment"></textarea>
+                <span id="messageError" class="error-message">Your comment must be at least 10 characters long.</span>
+              </div>
+
+              <button type="submit" class="submit-pill-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <img src="../Images/Logo.png" alt="Mangaung Digital Art" class="footer-logo">
+        <p>Providing access to modern creative tools, training, and support for the youth of Botshabelo.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="./Services.html">Digital Art & Illustration</a></li>
+          <li><a href="./Services.html">Photography & Visual Media</a></li>
+          <li><a href="./Services.html">Graphic Design Essentials</a></li>
+          <li><a href="./Services.html">Modern Print Technology</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./AboutUs.html">About Us</a></li>
+          <li><a href="./Services.html">Application & Registration</a></li>
+          <li><a href="./Enquiry.html">Talk To Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h3>Talk To Us</h3>
+        <p>Tel: <a href="tel:+2782636371">08263 6371</a></p>
+        <p>Email: <a href="mailto:info@mangaungdigitalart.org">info@mangaungdigitalart.org</a></p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+               
+
+                
+
+
+
+
+    
+        
+
+
+   
