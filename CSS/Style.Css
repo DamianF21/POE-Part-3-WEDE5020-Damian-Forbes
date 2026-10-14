@@ -1300,3 +1300,60 @@ textarea.error {
 .form-status.success {
   display: block;
 }
+
+
+
+/* --- Red Validation Rules --- */
+.minimal-form .error-message {
+    display: none;
+    color: #ef4444 !important;
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+/* Force visible when invalid */
+.minimal-form .error-message.show {
+    display: block !important;
+}
+
+/* Red outlines on inputs */
+.minimal-form input.input-error,
+.minimal-form textarea.input-error,
+.minimal-form fieldset.input-error {
+    border: 1.5px solid #ef4444 !important;
+    outline: none !important;
+}
+
+/* Success status text */
+.form-status {
+    display: none;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    color: #166534;
+    background-color: #dcfce7;
+}
+
+.form-status.show {
+    display: block !important;
+}
+
+
+
+
+/* Keeps error text hidden until an error occurs */
+.error-message {
+    display: none;
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* Turns inputs red when invalid */
+input.input-error,
+textarea.input-error,
+select.input-error,
+fieldset.input-error {
+    border: 1.5px solid #ef4444 !important;
+}

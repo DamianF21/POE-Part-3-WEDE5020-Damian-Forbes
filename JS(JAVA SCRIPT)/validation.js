@@ -151,3 +151,109 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".minimal-form");
+    if (!form) return;
+
+    const nameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("email");
+    const detailsInput = document.getElementById("details");
+    const fieldset = document.querySelector(".minimal-fieldset");
+    const statusBox = document.getElementById("enquiryStatus");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const typeError = document.getElementById("typeError");
+    const detailsError = document.getElementById("detailsError");
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function validateName() {
+        if (!nameInput) return true;
+        const valid = nameInput.value.trim().length >= 3;
+        if (!valid) {
+            nameInput.classList.add("input-error");
+            if (nameError) nameError.classList.add("show");
+        } else {
+            nameInput.classList.remove("input-error");
+            if (nameError) nameError.classList.remove("show");
+        }
+        return valid;
+    }
+
+    function validateEmail() {
+        if (!emailInput) return true;
+        const valid = emailPattern.test(emailInput.value.trim());
+        if (!valid) {
+            emailInput.classList.add("input-error");
+            if (emailError) emailError.classList.add("show");
+        } else {
+            emailInput.classList.remove("input-error");
+            if (emailError) emailError.classList.remove("show");
+        }
+        return valid;
+    }
+
+    function validateRadio() {
+        const checked = form.querySelector('input[name="enquiryType"]:checked');
+        if (!checked) {
+            if (fieldset) fieldset.classList.add("input-error");
+            if (typeError) typeError.classList.add("show");
+            return false;
+        } else {
+            if (fieldset) fieldset.classList.remove("input-error");
+            if (typeError) typeError.classList.remove("show");
+            return true;
+        }
+    }
+
+    function validateDetails() {
+        if (!detailsInput) return true;
+        const valid = detailsInput.value.trim().length >= 10;
+        if (!valid) {
+            detailsInput.classList.add("input-error");
+            if (detailsError) detailsError.classList.add("show");
+        } else {
+            detailsInput.classList.remove("input-error");
+            if (detailsError) detailsError.classList.remove("show");
+        }
+        return valid;
+    }
+
+    // Clear red style immediately when user types
+    if (nameInput) nameInput.addEventListener("input", validateName);
+    if (emailInput) emailInput.addEventListener("input", validateEmail);
+    if (detailsInput) detailsInput.addEventListener("input", validateDetails);
+    form.querySelectorAll('input[name="enquiryType"]').forEach((radio) => {
+        radio.addEventListener("change", validateRadio);
+    });
+
+    // Run check on Submit click
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop page reload
+
+        const isNameOk = validateName();
+        const isEmailOk = validateEmail();
+        const isRadioOk = validateRadio();
+        const isDetailsOk = validateDetails();
+
+        if (isNameOk && isEmailOk && isRadioOk && isDetailsOk) {
+            if (statusBox) {
+                statusBox.textContent = "Thank you! Your enquiry has been submitted.";
+                statusBox.classList.add("show");
+            }
+            form.reset();
+            if (nameInput) nameInput.classList.remove("input-error");
+            if (emailInput) emailInput.classList.remove("input-error");
+            if (detailsInput) detailsInput.classList.remove("input-error");
+            if (fieldset) fieldset.classList.remove("input-error");
+        } else {
+            if (statusBox) {
+                statusBox.classList.remove("show");
+            }
+        }
+    });
+});

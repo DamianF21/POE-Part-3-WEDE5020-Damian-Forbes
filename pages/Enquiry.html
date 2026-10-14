@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="../CSS/Style.Css">
-
-    
-    <title>Enquire Mangaung Digital Art Print</title>
+    <link rel="stylesheet" href="../CSS/Style.Css">
+    <title>Enquire | Mangaung Digital Art Print</title>
 </head>
 <body>
+    <!-- 1. ADDED: Exact script paths from ContactUs.html -->
+    <script src="../JS(JAVA SCRIPT)/main.js" defer></script>
+    <script src="../JS(JAVA SCRIPT)/validation.js" defer></script>
+
     <header class="site-header">
         <!-- container centres the content; header-inner arranges its children. -->
         <div class="container header-inner">
@@ -27,25 +29,18 @@
                 <a href="ContactUs.html">Contact Us</a>
             </nav>
         </div>
-
-        </header>
+    </header>
 
     <main class="enquiry-page">
-        
-        <!-- NEW IMAGE BANNER SECTION -->
+        <!-- Banner Section -->
         <section class="enquiry-hero">
             <div class="hero-content">
                 <h1>Hello.<br>Let's work together<br>on your next project.</h1>
             </div>
         </section>
 
-        <!-- Your existing 2-column FAQ and Form goes here -->
+        <!-- 2-Column FAQ & Form Grid -->
         <div class="container enquiry-grid">
-            
-            <div class="enquiry-info">
-                <h2>Frequently Asked Questions</h2>
-
-                <div class="container enquiry-grid">
             
             <!-- LEFT COLUMN: FAQs -->
             <div class="enquiry-info">
@@ -69,16 +64,25 @@
                 <h2>Make an Enquiry</h2>
                 <p>Use the form below to ask specific questions or apply for one of our programs.</p>
 
-                <form class="minimal-form">
-                    <!-- Top row inputs side-by-side -->
+                <!-- 2. ADDED: Form Status Container from ContactUs.html -->
+                <div id="formStatus" class="form-status">
+                    Thank you! Your enquiry has been sent successfully.
+                </div>
+
+                <!-- 3. ADDED: id="enquiryForm" and novalidate from ContactUs.html -->
+                <form id="enquiryForm" class="minimal-form" novalidate>
                     <div class="form-row">
                         <div class="input-group">
                             <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" required>
+                            <input type="text" id="fullName" name="fullName">
+                            <!-- 4. ADDED: Error span -->
+                            <span id="nameError" class="error-message">Please enter a name with at least 3 characters.</span>
                         </div>
                         <div class="input-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email">
+                            <!-- 4. ADDED: Error span -->
+                            <span id="emailError" class="error-message">Please enter a valid email address.</span>
                         </div>
                     </div>
 
@@ -99,11 +103,16 @@
                             <input type="radio" id="question" name="enquiryType" value="Question">
                             <label for="question">I have a general question</label>
                         </div>
+
+                        <!-- 4. ADDED: Error span -->
+                        <span id="typeError" class="error-message">Please choose an option.</span>
                     </fieldset>
 
                     <div class="input-group">
                         <label for="details">Please provide more details:</label>
-                        <textarea id="details" name="details" rows="3" required></textarea>
+                        <textarea id="details" name="details" rows="3"></textarea>
+                        <!-- 4. ADDED: Error span -->
+                        <span id="detailsError" class="error-message">Your comment must be at least 10 characters long.</span>
                     </div>
 
                     <button type="submit" class="pill-button">Submit</button>
@@ -113,51 +122,45 @@
         </div>
     </main>
 
-   <footer class="site-footer">
-  <div class="footer-grid">
-    <!-- Column 1 -->
-    <div class="footer-col">
-      <img src="../Images/Logo.png" alt="Mangaung Digital Art" class="footer-logo">
-      <p>Providing access to modern creative tools, training, and support for the youth of Botshabelo.</p>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Images/Logo.png" alt="Mangaung Digital Art" class="footer-logo">
+                <p>Providing access to modern creative tools, training, and support for the youth of Botshabelo.</p>
+            </div>
 
-    <!-- Column 2 -->
-    <div class="footer-col">
-      <h3>Our Services</h3>
-      <ul>
-        <li><a href="./Services.html">Digital Art & Illustration</a></li>
-        <li><a href="./Services.html">Photography & Visual Media</a></li>
-        <li><a href="./Services.html">Graphic Design Essentials</a></li>
-        <li><a href="./Services.html">Modern Print Technology</a></li>
-      </ul>
-    </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="./Services.html">Digital Art & Illustration</a></li>
+                    <li><a href="./Services.html">Photography & Visual Media</a></li>
+                    <li><a href="./Services.html">Graphic Design Essentials</a></li>
+                    <li><a href="./Services.html">Modern Print Technology</a></li>
+                </ul>
+            </div>
 
-    <!-- Column 3 -->
-    <div class="footer-col">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./AboutUs.html">About Us</a></li>
-        <li><a href="./Services.html">Application & Registration</a></li>
-        <li><a href="./Enquiry.html">Talk To Us</a></li>
-      </ul>
-    </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./AboutUs.html">About Us</a></li>
+                    <li><a href="./Services.html">Application & Registration</a></li>
+                    <li><a href="./Enquiry.html">Talk To Us</a></li>
+                </ul>
+            </div>
 
-    <!-- Column 4 -->
-    <!-- Column 4 -->
-<div class="footer-col">
-  <h3>Talk To Us</h3>
-  <p>Tel: <a href="tel:+2782636371">08263 6371</a></p>
-  <p>Email: <a href="mailto:info@mangaungdigitalart.org">info@mangaungdigitalart.org</a></p>
-  <div class="social-links">
-    <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer">X</a>
-    <a href="https://www.youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
-  </div>
-</div>
-  </div>
-</footer>
-
+            <div class="footer-col">
+                <h3>Talk To Us</h3>
+                <p>Tel: <a href="tel:+2782636371">08263 6371</a></p>
+                <p>Email: <a href="mailto:info@mangaungdigitalart.org">info@mangaungdigitalart.org</a></p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer">X</a>
+                    <a href="https://www.youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
