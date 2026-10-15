@@ -7,7 +7,8 @@
     <title>Enquire | Mangaung Digital Art Print</title>
 </head>
 <body>
-    <!-- 1. ADDED: Exact script paths from ContactUs.html -->
+    <!-- EmailJS Browser SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="../JS(JAVA SCRIPT)/main.js" defer></script>
     <script src="../JS(JAVA SCRIPT)/validation.js" defer></script>
 
@@ -64,24 +65,22 @@
                 <h2>Make an Enquiry</h2>
                 <p>Use the form below to ask specific questions or apply for one of our programs.</p>
 
-                <!-- 2. ADDED: Form Status Container from ContactUs.html -->
+                <!-- Form Status Container -->
                 <div id="formStatus" class="form-status">
                     Thank you! Your enquiry has been sent successfully.
                 </div>
 
-                <!-- 3. ADDED: id="enquiryForm" and novalidate from ContactUs.html -->
+                <!-- Enquiry Form -->
                 <form id="enquiryForm" class="minimal-form" novalidate>
                     <div class="form-row">
                         <div class="input-group">
                             <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName">
-                            <!-- 4. ADDED: Error span -->
+                            <input type="text" id="fullName" name="fullname">
                             <span id="nameError" class="error-message">Please enter a name with at least 3 characters.</span>
                         </div>
                         <div class="input-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email">
-                            <!-- 4. ADDED: Error span -->
                             <span id="emailError" class="error-message">Please enter a valid email address.</span>
                         </div>
                     </div>
@@ -104,14 +103,12 @@
                             <label for="question">I have a general question</label>
                         </div>
 
-                        <!-- 4. ADDED: Error span -->
                         <span id="typeError" class="error-message">Please choose an option.</span>
                     </fieldset>
 
                     <div class="input-group">
                         <label for="details">Please provide more details:</label>
-                        <textarea id="details" name="details" rows="3"></textarea>
-                        <!-- 4. ADDED: Error span -->
+                        <textarea id="details" name="message" rows="3"></textarea>
                         <span id="detailsError" class="error-message">Your comment must be at least 10 characters long.</span>
                     </div>
 

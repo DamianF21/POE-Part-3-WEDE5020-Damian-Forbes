@@ -7,6 +7,8 @@
     <title>Contact Us | Mangaung Digital Art Print</title>
 </head>
 <body>
+  <!-- EmailJS Browser SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="../JS(JAVA SCRIPT)/main.js" defer></script>
   <script src="../JS(JAVA SCRIPT)/validation.js" defer></script>
 
@@ -104,12 +106,12 @@
             <!-- Main Interactive Form -->
             <form id="contactForm" class="contact-form" novalidate>
               <div>
-                <input type="text" id="fullName" name="fullName" placeholder="Full name">
+                <input type="text" id="fullName" name="fullname" placeholder="Full name">
                 <span id="nameError" class="error-message">Please enter a name with at least 3 characters.</span>
               </div>
 
               <div>
-                <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number">
+                <input type="tel" id="contactNumber" name="mobileNumber" placeholder="Contact Number">
               </div>
 
               <div>
@@ -124,24 +126,24 @@
               <div>
                 <select id="location" name="location">
                   <option value="" disabled selected>Location</option>
-                  <option value="botshabelo">Botshabelo</option>
-                  <option value="mangaung">Mangaung (Other)</option> 
+                  <option value="Botshabelo">Botshabelo</option>
+                  <option value="Mangaung (Other)">Mangaung (Other)</option> 
                 </select>
               </div>
 
               <div>
-                <!-- ID changed to serviceSelect to match validation.js -->
-                <select id="serviceSelect" name="enquiryType">
+                <!-- ID kept as serviceSelect to match validation.js -->
+                <select id="serviceSelect" name="subject">
                   <option value="" disabled selected>Please select type of enquiry</option>
-                  <option value="enrollment">Program Enrollment</option>
-                  <option value="general">General Question</option>
+                  <option value="Program Enrollment">Program Enrollment</option>
+                  <option value="General Question">General Question</option>
                 </select>
                 <span id="serviceError" class="error-message">Please choose an option.</span>
               </div>
 
               <div>
-                <!-- ID changed to message to match validation.js -->
-                <textarea id="message" name="comments" rows="3" placeholder="Comment"></textarea>
+                <!-- ID kept as message to match validation.js -->
+                <textarea id="message" name="message" rows="3" placeholder="Comment"></textarea>
                 <span id="messageError" class="error-message">Your comment must be at least 10 characters long.</span>
               </div>
 
@@ -200,17 +202,3 @@
   </footer>
 </body>
 </html>
-
-
-               
-
-                
-
-
-
-
-    
-        
-
-
-   

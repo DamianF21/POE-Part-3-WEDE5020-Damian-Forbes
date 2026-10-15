@@ -83,3 +83,53 @@ function initLiveSearch() {
     emptyState.style.display = visibleCount === 0 ? "block" : "none";
   });
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const noResults = document.getElementById("noResults");
+
+    // Works for both index.html (.suggestion-card) and Services.html (.service-card)
+    const cards = document.querySelectorAll(".suggestion-card, .service-card");
+
+    if (!searchInput || cards.length === 0) return;
+
+    function filterCards() {
+        const query = searchInput.value.toLowerCase().trim();
+        let matchCount = 0;
+
+        cards.forEach(function (card) {
+            const title = card.querySelector("h3") ? card.querySelector("h3").textContent.toLowerCase() : "";
+            const text = card.querySelector("p") ? card.querySelector("p").textContent.toLowerCase() : "";
+
+            if (title.includes(query) || text.includes(query)) {
+                card.style.display = "";
+                matchCount++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        if (noResults) {
+            noResults.style.display = matchCount === 0 ? "block" : "none";
+        }
+    }
+
+    // Filter when clicking the Search button
+    if (searchBtn) {
+        searchBtn.addEventListener("click", filterCards);
+    }
+
+    // Also filter live as the user types or presses Enter
+    searchInput.addEventListener("input", filterCards);
+    searchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            filterCards();
+        }
+    });
+});
