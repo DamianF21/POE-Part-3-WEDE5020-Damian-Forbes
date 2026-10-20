@@ -123,3 +123,114 @@ Map & Action Layout: Integrated the Google Maps iframe within a framed container
 
 ***EmailJS CDN URL***
 -- Replaced the truncated [https://jsdelivr.net](https://jsdelivr.net) script source in the test environment with the complete EmailJS browser SDK URL.
+
+
+***[1.2.1] - 2026-09-16 (Part 2: CSS Styling & Responsive Architecture)***
+
+***Added***
+--Global: Configured custom CSS variables (:root) for cohesive brand coloring across all pages.
+
+--Global: Added a comprehensive 4-column footer containing the NPO logo, quick links, service links, and functional external social media links (Facebook, Instagram, X, YouTube).
+
+--Home (index.html): Built an Uber-inspired split-screen hero layout with primary and secondary action buttons.
+
+--Home (index.html): Added a bottom grid featuring 4 interactive suggestion cards with inline icons.
+
+--About (AboutUs.html): Implemented a custom magazine-style split-screen layout with vertical writing-mode typography, overlapping accent blocks, and responsive image framing.
+
+--Enquiry (Enquiry.html): Added a full-width background hero image with centered, text-shadowed typography.
+
+--Contact (ContactUs.html): Embedded a verified Botshabelo Google Maps iframe inside a framed container directly below the physical address alongside a directions button
+
+***Changed***
+--Global: Updated <nav> links to include aria-current="page" to highlight the active page.  
+
+
+
+
+# Changelog
+
+All notable changes to the Mangaung Digital Art Print website project are documented in this file.
+
+## [1.3.0] - 2026-10-20 (Part 3: JavaScript Interactivity & Form Validation)
+
+### Added
+- *Global Scripting (main.js):* Implemented dynamic active-page navigation highlighting (aria-current="page"), a smooth-scrolling "Back to Top" floating button, and automatic copyright year updates in the footer.
+- *Client-Side Form Validation (validation.js):* Added real-time and on-submit validation for both ContactUs.html and Enquiry.html. Configured custom red border states (.input-error) and inline red validation messages (.error-message) for full name (minimum 3 characters), valid email format, radio/dropdown selection, and minimum 10-character comments.
+- *Interactive Image Lightbox (lightbox.js):* Built a full-screen modal image previewer for .service-card, .suggestion-card, .about-image-box, and .hero-image-container images with backdrop-click and Escape key dismissal.
+- *Live Content Filtering (search.js):* Added a rounded client-side search filter bar ("Filter focus areas...") that dynamically filters focus cards on index.html and service cards on Services.html, complete with a fallback message when no matching items are found.
+- *EmailJS SDK Integration (Sandbox Testing):* Configured and tested live form-to-email dispatching using the EmailJS v4 CDN (@emailjs/browser@4), wiring #contact-form fields (from_name, reply_to, message) and submission button loading states (#submit-btn).
+
+### Changed
+- *Enquiry (Enquiry.html):* Added novalidate and id="enquiryForm" to .minimal-form to bypass default browser tooltips in favor of custom JavaScript error styling. Added #formStatus banner and .error-message spans beneath the name, email, fieldset radio buttons, and details textarea while preserving the original 2-column minimalist layout.
+- *Home (index.html):* Linked main.js, lightbox.js, and search.js via defer attributes and removed duplicate static search inputs so only the styled dynamic filter bar renders above the Primary Focus Areas grid.
+
+### Fixed
+- *Enquiry HTML Markup:* Removed accidental duplicate nested <div class="container enquiry-grid"> and duplicate <h2>Frequently Asked Questions</h2> wrappers in Enquiry.html.
+- *Script & Navigation Routing:* Standardized relative script paths (../JS(JAVA SCRIPT)/) across subpages and fixed the broken ../ContactUs.html navigation link in index.html to point to ./pages/ContactUs.html.
+- *EmailJS CDN URL:* Replaced the truncated https://jsdelivr.net script source in the test environment with the complete EmailJS browser SDK URL.
+
+---
+
+## [1.2.1] - 2026-09-16 (Part 2: CSS Styling & Responsive Architecture)
+
+### Added
+- *Global:* Configured custom CSS variables (:root) for cohesive brand coloring across all pages.
+- *Global:* Added a comprehensive 4-column footer containing the NPO logo, quick links, service links, and functional social media links (Facebook, Instagram, X, YouTube).
+- *Home:* Built an Uber-inspired split-screen hero layout with primary and secondary action buttons.
+- *Home:* Added a bottom grid featuring 4 interactive suggestion cards with inline icons.
+- *About:* Implemented a custom split-screen layout with vertical writing-mode typography and responsive image framing.
+- *Enquiry:* Added a full-width background hero image with centered, text-shadowed typography.
+- *Contact:* Embedded a live Google Map iframe inside the contact details column alongside a directions button.
+
+### Changed
+- *Global:* Updated the <nav> links to include aria-current="page" to dynamically highlight the active page.
+- *Services:* Converted standard text lists into a 4-column CSS Grid service-card layout with hover transformation and shadow effects.
+- *Enquiry:* Completely redesigned the form into a minimalist 2-column UI, featuring bottom-border-only input fields and a slate-blue pill-shaped submit button.
+- *Contact:* Restructured the main content into a 2-column CSS Grid, separating the company details and map on the left from the interactive user form card on the right.
+- *Opening Hours Grid:* Converted the unstructured bulleted list into distinct two-column flex rows with subtle dividing lines, aligning the days to the left and times to the right.
+- *Interactive Protocols:* Upgraded plain text contact details into clickable actions using tel:+27... for mobile phone dialing and mailto:... for direct emailing.
+- *External Link Security:* Added target="_blank" alongside rel="noopener noreferrer" attributes to all social media links.
+
+### Fixed
+- *Global:* Corrected broken HTML wrapper elements (div, section) to ensure CSS Grid and Flexbox rules apply correctly.
+- *Global:* Implemented @media queries at 900px, 768px, and 600px breakpoints to fix layout breaking on tablet and mobile devices.
+- *Navigation:* Resolved typography and underline issues in the header by properly scoping the .site-nav a and .brand CSS classes.
+- *CSS Syntax & Error Cleanup:* Fixed an unclosed comment block (* The Updated Grey Cards */) that was breaking card rendering, corrected the invalid @media (media-width:600px) query to @media (max-width: 600px), and resolved a numerical typo (margin: 0.0.1rem 0;) on footer headings.
+- *Copy & Typo Corrections:* Corrected the header spelling from "Phyical Address" to "Physical Address" and restored the original business details (Address: 2044 Section A, Botshabelo, 9781, Mangaung; Telephone: 08263 6371).
+
+---
+
+## [1.2.0] - 2026-08-12 (Part 1)
+
+### Added
+- Created the Services.html layout highlighting program offerings (Digital Art, Photography, Graphic Design, Printing).
+- Created the advanced Enquiry.html layout utilizing a structured form layout.
+- Added form elements to Enquiry.html including a custom <fieldset> and <input type="radio"> choice options.
+- Authored standardized README.md and CHANGELOG.md assignment files.
+
+---
+
+## [1.1.0] - 2026-08-11
+
+### Added
+- Created a newly expanded interactive form inside ContactUs.html with functional dropdowns (<select>), text areas (<textarea>), and specialized contact attributes.
+- Formatted the organization's operating hours and address specifications inside a clear <section> format block.
+
+---
+
+## [1.0.1] - 2026-08-09
+
+### Fixed
+- Corrected internal directory path case mismatches across the navigation tree links to completely resolve persistent web page ERR_FILE_NOT_FOUND routing exceptions.
+- Synchronized global <nav> structure menus across all individual project files.
+- Removed line break (<br>) alignment blocks causing text fields to wrap improperly below input boxes right alongside item text labels.
+
+---
+
+## [1.0.0] - 2026-08-07
+
+### Added
+- Initialized local project repository environment.
+- Created baseline boilerplate core files: index.html, AboutUs.html, and ContactUs.html.
+- Implemented primary structural layout elements including the <header>, <nav>, <main>, and <footer> layout sections.
