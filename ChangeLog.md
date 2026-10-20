@@ -86,3 +86,40 @@ Address: 2044 Section A, Botshabelo, 9781, Mangaung
 Telephone: 08263 6371
 
 Map & Action Layout: Integrated the Google Maps iframe within a framed container directly below the physical address text, complemented by an outline directions button.
+
+***Added***
+***1.3.0*** - 2026-10-20 (Part 3: JavaScript Interactivity & Form Validation)
+
+***Global Scripting (main.js): Implemented dynamic active-page navigation highlighting (aria-current="page")***
+--a smooth-scrolling "Back to Top" floating button, and automatic copyright year injection in the footer.
+
+***Client-Side Form Validation (validation.js)***
+--Added real-time and on-submit validation for both ContactUs.html and Enquiry.html. Configured custom red border states (.input-error) and inline red validation messages (.error-message) for full name (minimum 3 characters), valid email format, radio/dropdown selection, and minimum 10-character comments.
+
+***Interactive Image Lightbox (lightbox.js)***
+-- Built a full-screen modal image previewer for .service-card, .suggestion-card, .about-image-box, and .hero-image-container images with backdrop-click and Escape key dismissal.
+
+***Live Content Filtering (search.js)***
+-- Added a rounded client-side search filter bar (Filter focus areas...) that dynamically filters focus cards on index.html and service cards on Services.html, complete with a fallback message when no matching items are found.
+
+***EmailJS SDK Integration (Sandbox Testing)***
+-- Configured and tested live form-to-email dispatching using the EmailJS v4 CDN (@emailjs/browser@4), wiring #contact-form fields (from_name, reply_to, message) and submission button loading states (#submit-btn).
+
+***Change***
+
+***Enquiry Page (Enquiry.html)***
+-- Added novalidate and id="enquiryForm" to .minimal-form to bypass native browser tooltips in favor of custom JavaScript error styling. --Added #formStatus banner and .error-message spans beneath the name, email, fieldset radio buttons, and details textarea while preserving the original 2-column minimalist layout.
+
+***Home Page (index.html)***
+--Linked main.js, lightbox.js, and search.js via defer attributes and removed duplicate static search inputs so only the styled dynamic filter bar renders above the Primary Focus Areas grid.
+
+***Fixed***
+
+***Enquiry HTML Markup***
+-- Removed accidental duplicate nested <div class="container enquiry-grid"> and duplicate <h2>Frequently Asked Questions</h2> wrappers in Enquiry.html
+
+***Script & Navigation Routing***
+-- Standardized relative script paths (../JS(JAVA SCRIPT)/) across subpages and fixed the broken ../ContactUs.html navigation link in index.html to point to ./pages/ContactUs.html
+
+***EmailJS CDN URL***
+-- Replaced the truncated [https://jsdelivr.net](https://jsdelivr.net) script source in the test environment with the complete EmailJS browser SDK URL.
