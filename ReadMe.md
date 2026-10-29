@@ -149,7 +149,8 @@ A multi-page responsive web platform built using semantic HTML5, modern CSS3, an
     ├── digital art.jpg
     └── WhatsApp Image 2026-09-09 at 1.56.06 PM.jpeg
 
-    Finish Read Me Poe  for fynal sumbmission 
+
+    Finish Read Me Poe  for final sumbmission finally done  with everything 
 
 **GitHub Link** [https://github.com/Damian-21-student/DAMIAN-FORBES-WED5020-ASSIGNMENT-1-PART1](https://github.com/Damian-21-student/DAMIAN-FORBES-WED5020-ASSIGNMENT-1-PART1)
 **Netilfy Link**[https://app.netlify.com/projects/elaborate-stardust-447a92/deploys/6a7c9ce9978a1a7b65ee6862](https://app.netlify.com/projects/elaborate-stardust-447a92/deploys/6a7c9ce9978a1a7b65ee6862)
