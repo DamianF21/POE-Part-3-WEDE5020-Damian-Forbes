@@ -234,3 +234,6 @@ All notable changes to the Mangaung Digital Art Print website project are docume
 - Initialized local project repository environment.
 - Created baseline boilerplate core files: index.html, AboutUs.html, and ContactUs.html.
 - Implemented primary structural layout elements including the <header>, <nav>, <main>, and <footer> layout sections.
+
+
+Finish change log 
