@@ -82,6 +82,73 @@ This project is a 5-page static website developed for an academic web developmen
 * **Responsive Breakpoints:** Configured cascading rules for desktop (4-column), tablet (2-column at $\le$ 900px), and mobile (single-column stack at $\le$ 600px).
 
 
+# Mangaung Digital Art Print Website
+
+A multi-page responsive web platform built using semantic HTML5, modern CSS3, and vanilla JavaScript. This project serves as the digital front door for **Mangaung Digital Art Print**, a registered community-focused Non-Profit Organisation (NPO) located at 2044 Section A, Botshabelo, 9781, Mangaung, Free State.
+
+## Purpose of the Website
+- **Youth Empowerment & Job Creation:** Drives youth empowerment and job creation within Mangaung by providing access to modern creative tools, structured training, and support.
+- **Community Access:** Provides youth and students in underprivileged communities with high-quality creative projects and accessible digital print services.
+- **Socio-Economic Impact:** Uses art and technology as an alternative intervention to reduce school dropout rates and promote long-lasting socio-economic empowerment at the local level.
+- **Core Services Provided:**
+  - *Digital Art & Illustration:* Comprehensive training on digital drawing tablets and modern illustration software to help youth express their creativity.
+  - *Photography & Visual Media:* Teaching the fundamentals of camera operation, lighting, and photo editing to capture the stories of our community.
+  - *Graphic Design Essentials:* Preparing students for the workplace by teaching them how to design logos, posters, and professional branding.
+  - *Modern Print Technology:* Taking digital creations into the physical world by teaching the operation of professional printers to create self-sustaining business opportunities.
+
+## Technical Stack
+- **HTML5:** Semantic structuring (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<fieldset>`, `<footer>`).
+- **CSS3:** Custom properties (`:root`), Flexbox, CSS Grid, hover transformations, validation states (`.input-error`, `.error-message`), and responsive `@media` queries (`900px`, `768px`, `600px`).
+- **JavaScript (ES6+):** Client-side interactivity (`main.js`, `validation.js`, `lightbox.js`, `search.js`) and EmailJS v4 SDK integration.
+- **Version Control:** Git & GitHub.
+- **Hosting/Deployment:** Netlify.
+
+## Page Structure & Features
+1. **Home (`index.html`):** Modern Uber-inspired layout featuring a split-screen hero section, a live JavaScript filter bar, and an interactive 4-card "Primary Focus Areas" grid with icons and lightbox support.
+2. **About (`pages/AboutUs.html`):** Magazine-style split layout featuring vertical typography, overlapping color blocks, mission/vision statements, and responsive image scaling.
+3. **Services (`pages/Services.html`):** A 4-column CSS Grid showcasing the core NPO offerings inside interactive, shadow-lifted UI cards with live search filtering and image lightbox previews.
+4. **Enquiry (`pages/Enquiry.html`):** A 2-column minimalist layout featuring a full-width hero background image, FAQs, bottom-border input fields, radio fieldsets, a pill-shaped submit button, and real-time red error validation.
+5. **Contact Us (`pages/ContactUs.html`):** A split 2-column layout containing organizational details, clickable `tel:` and `mailto:` protocols, tabular opening hours, an embedded Botshabelo Google Map, and a validated inquiry form card.
+
+## JavaScript Modules (Part 3 Enhancements)
+- **`main.js`:** Handles active navigation state highlighting (`aria-current="page"`), injects a smooth-scroll "Back to Top" button when scrolling down, and updates the footer year dynamically.
+- **`validation.js`:** Provides real-time and submit-event form validation for `ContactUs.html` and `Enquiry.html`. Applies red error outlines (`.input-error`) and reveals inline red error text (`.error-message`) beneath invalid inputs before displaying a green confirmation banner (`#formStatus`) on valid submission.
+- **`lightbox.js`:** Generates a centered dark modal overlay when users click service, focus card, hero, or about images, supporting backdrop click and `Escape` key closing.
+- **`search.js`:** Injects a rounded live search input bar that filters focus area cards and service cards dynamically by title and description keywords.
+- **EmailJS Integration (`script.js`):** Connects the contact form to the EmailJS browser SDK (`@emailjs/browser@4`) to send real-time user messages directly to the organisation's email inbox.
+
+## Project Structure
+```text
+/
+├── index.html                  # Homepage with split hero, live search & focus cards
+├── README.md                   # Documentation for project overview
+├── CHANGELOG.md                # Documentation for updates and development history
+│
+├── pages/                      # Secondary website pages
+│   ├── AboutUs.html            # NPO history, Core Mission and Vision Statement
+│   ├── Services.html           # Catalog of the digital training programs offered
+│   ├── Enquiry.html            # FAQ grid and validated minimalist enquiry form
+│   └── ContactUs.html          # Address details, operating hours, map and contact form
+│
+├── CSS/                        # Stylesheets
+│   └── Style.Css               # Global variables, Grid/Flex layouts, responsive rules & validation styles
+│
+├── JS(JAVA SCRIPT)/            # JavaScript files
+│   ├── main.js                 # Active nav highlighting, Back-to-Top button & footer helpers
+│   ├── validation.js           # Client-side form validation for ContactUs & Enquiry forms
+│   ├── lightbox.js             # Full-screen modal image viewer
+│   └── search.js               # Live search filtering for cards
+│
+└── Images/                     # Local directory containing graphic assets
+    ├── Logo.png
+    ├── Hero card.jpeg
+    ├── Index digital arts.jpeg
+    ├── Index media.jpeg
+    ├── Index grapghic.jpeg
+    ├── index print.jpg
+    ├── digital art.jpg
+    └── WhatsApp Image 2026-09-09 at 1.56.06 PM.jpeg
+Finish read me 
 
 **GitHub Link** [https://github.com/Damian-21-student/DAMIAN-FORBES-WED5020-ASSIGNMENT-1-PART1](https://github.com/Damian-21-student/DAMIAN-FORBES-WED5020-ASSIGNMENT-1-PART1)
 **Netilfy Link**[https://app.netlify.com/projects/elaborate-stardust-447a92/deploys/6a7c9ce9978a1a7b65ee6862](https://app.netlify.com/projects/elaborate-stardust-447a92/deploys/6a7c9ce9978a1a7b65ee6862)
