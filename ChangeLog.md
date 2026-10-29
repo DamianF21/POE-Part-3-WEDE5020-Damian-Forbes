@@ -236,4 +236,5 @@ All notable changes to the Mangaung Digital Art Print website project are docume
 - Implemented primary structural layout elements including the <header>, <nav>, <main>, and <footer> layout sections.
 
 
-Finish change log 
+Finish change log  for final submission finally
+
